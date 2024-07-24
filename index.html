@@ -1,0 +1,30 @@
+<DOCTYPE html>
+<html>
+    <head>
+        <title> CSEDGE TASK MANAGER</title>
+        <link rel="Stylesheet",href="{{url_for('static',filename='style.css')}}"
+    </head>
+    <body>
+        <div class="container"></div>
+        <h1>Task Manager</h1>
+        <form action="{{url_for('add')}}"method="post">
+            <input type="text" name="'title" placeholder="Task title" required>
+            <input type="text" name="description" placeholder=""Task description">
+            <button type="register">Add Task</button>
+        </form>
+        <ul>
+            <script>
+                {% for task in tasks %}
+            </script>
+            <li>
+            
+                <input type="checkbox"{% if task[3]==1 %}checked{% endif %} onchange="location.href='{{url_for('update',task_id=task[0],status=1)}}'
+                <span>{{task[1]}}
+                <a href= '{{url_for('delete',task_id=task_id[0]) }}'' class="" delete>DELETE</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    </body>
+</html>
+</DOCTYPE>
